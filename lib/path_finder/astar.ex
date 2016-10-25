@@ -9,8 +9,9 @@ defmodule PathFinder.AStar do
   end
 
   def neighbors(item) do
+    item
   end
-  
+
 end
 
 queue = []

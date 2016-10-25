@@ -20,7 +20,11 @@ defmodule PathFinder.Draw do
     {:noreply, [h | t]}
   end
 
+  def quicksort([]), do: []
+
   def quicksort(list) do
-    
+    [first_part | rest ] = list
+    {a,b} = Enum.partition(rest, (fn item -> first_part > item end))
+    quicksort(a) ++ [first_part] ++ quicksort(b)
   end
 end
