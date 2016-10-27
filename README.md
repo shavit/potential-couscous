@@ -24,5 +24,4 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 
 
 ## Testing
-Run tests using `mix`
-  `mix test`
+Run tests using `mix test`
