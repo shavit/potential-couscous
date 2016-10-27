@@ -20,6 +20,25 @@ defmodule PathFinder.Draw do
     {:noreply, [h | t]}
   end
 
+  def cell(_cell_type) do
+    "."
+  end
+
+  def row(width) do
+    cond do
+      width > 1 -> ["."] ++ row(width-1)
+      true -> ["."]
+    end
+  end
+
+  def grid([w,h]) do
+    cond do
+      h > 2 -> grid([w, h-1])
+      true -> IO.puts List.to_string(row(w))
+    end
+    IO.puts List.to_string(row(w))
+  end
+
   def quicksort([]), do: []
 
   def quicksort(list) do
@@ -28,3 +47,5 @@ defmodule PathFinder.Draw do
     quicksort(a) ++ [first_part] ++ quicksort(b)
   end
 end
+
+PathFinder.Draw.grid([1,2])
